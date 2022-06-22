@@ -38,7 +38,6 @@ public class MemStore<T extends Base> implements Store<T> {
 
     @Override
     public T findById(String id) {
-        Objects.equals(storage.get(id), id);
         return storage.get(id);
     }
 }
