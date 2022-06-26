@@ -8,7 +8,7 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
     transient Node<E> first;
     private int mobCount;
 
-    public class Node<E> {
+    public static class Node<E> {
 
         E item;
         Node<E> next;
@@ -45,10 +45,12 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
          return new Iterator<E>() {
             int mobCountExpect = mobCount;
             Node<E> tmp = first;
-            int index = 0;
             @Override
             public boolean hasNext() {
-                return index < size;
+                if (mobCount != mobCountExpect) {
+                throw new ConcurrentModificationException();
+            }
+                return tmp != null;
             }
 
             @Override
@@ -56,12 +58,9 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (mobCount != mobCountExpect) {
-                    throw new ConcurrentModificationException();
-                }
+
                 E val = tmp.item;
-                tmp = first.next;
-                index++;
+                tmp = tmp.next;
                 return val;
             }
         };
