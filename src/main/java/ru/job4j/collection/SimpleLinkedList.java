@@ -66,3 +66,4 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
         };
     }
 }
+
