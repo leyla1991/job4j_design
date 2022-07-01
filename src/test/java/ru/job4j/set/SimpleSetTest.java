@@ -30,6 +30,6 @@ public class SimpleSetTest {
         assertTrue(set.add(3));
         assertTrue(set.contains(3));
         assertTrue(set.add(1));
-        assertTrue(set.add(1));
+        assertTrue(set.contains(1));
     }
 }
