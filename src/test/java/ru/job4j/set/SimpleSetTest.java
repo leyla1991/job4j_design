@@ -32,4 +32,14 @@ public class SimpleSetTest {
         assertTrue(set.add(1));
         assertTrue(set.contains(1));
     }
+
+    @Test
+    public void when3Add() {
+        Set<Integer> set = new SimpleSet<>();
+        assertTrue(set.add(1));
+        assertTrue(set.add(2));
+        assertTrue(set.add(3));
+        assertTrue(set.contains(1));
+        assertFalse(set.add(1));
+    }
 }
