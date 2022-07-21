@@ -55,5 +55,15 @@ public class SimpleMapTest {
         SimpleMap<Integer, Integer> map = new SimpleMap<>();
         Assert.assertNull(map.get(1));
     }
+
+    @Test
+    public void whenKeyIsNull() {
+        SimpleMap<String, Integer> map = new SimpleMap<>();
+        map.put(null, 2);
+        Integer res = map.get(null);
+        assertThat(res, is(2));
+        Assert.assertTrue(map.remove(null));
+        Assert.assertNull(map.get(null));
+    }
 }
 
