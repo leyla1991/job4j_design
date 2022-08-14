@@ -1,61 +1,35 @@
 package ru.job4j.iterator;
 
-import static org.hamcrest.Matchers.is;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.function.Predicate;
+class ListUtilsTest {
 
-import static org.junit.Assert.assertThat;
+    private List<Integer> input;
 
-public class ListUtilsTest {
+    @BeforeEach
+    void setUp() {
+        input = new ArrayList<>(Arrays.asList(1, 3));
+    }
 
     @Test
-    public void whenAddBefore() {
-        List<Integer> input = new ArrayList<>(Arrays.asList(1, 3));
+    void whenAddBefore() {
         ListUtils.addBefore(input, 1, 2);
-        assertThat(input, is(Arrays.asList(1, 2, 3)));
-    }
-
-    @Test(expected = IndexOutOfBoundsException.class)
-    public void whenAddBeforeWithInvalidIndex() {
-        List<Integer> input = new ArrayList<>(Arrays.asList(1, 3));
-        ListUtils.addBefore(input, 3, 2);
+        assertThat(input).hasSize(3).containsSequence(1, 2, 3);
     }
 
     @Test
-    public void whenAddAfterLast() {
-        List<Integer> input = new ArrayList<>(Arrays.asList(0, 1, 2));
-        ListUtils.addAfter(input, 2, 3);
-
-
-        assertThat(input, is(Arrays.asList(0, 1, 2, 3)));
+    void whenAddBeforeWithInvalidIndex() {
+        assertThatThrownBy(() -> ListUtils.addBefore(input, 3, 2))
+                .isInstanceOf(IndexOutOfBoundsException.class);
     }
 
     @Test
-    public void whenRemoveAll() {
-        List<Integer> input = new ArrayList<>(Arrays.asList(0, 1, 2));
-        List<Integer> elements = new ArrayList<>(Arrays.asList(1, 2));
-        ListUtils.removeAll(input, elements);
-        assertThat(input, is(Arrays.asList(0)));
-    }
-
-    @Test
-    public void whenRemoveIf() {
-        List<Integer> input = new ArrayList<>(Arrays.asList(0, 2, 4, 6));
-        Predicate<Integer> predicate = x -> x < 3;
-        ListUtils.removeIf(input, predicate);
-        assertThat(input, is(Arrays.asList(4, 6)));
-    }
-
-    @Test
-    public void whenReplaceIf() {
-        List<Integer> input = new ArrayList<>(Arrays.asList(0, 23, 34));
-        Predicate<Integer> predicate = x -> x > 10;
-        ListUtils.replaceIf(input, predicate, 9);
-        assertThat(input, is(Arrays.asList(0, 9, 9)));
+    void whenAddAfter() {
+        ListUtils.addAfter(input, 0, 2);
+        assertThat(input).hasSize(3).containsSequence(1, 2, 3);
     }
 }
