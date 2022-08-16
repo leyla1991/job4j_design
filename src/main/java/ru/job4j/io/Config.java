@@ -22,7 +22,7 @@ public class Config {
            in.lines().filter(l -> l.length() > 0 && !l.startsWith("#"))
                    .forEach(s -> {
                String[] key = s.split("=", 2);
-               if (key.length == 1 || key.length == 2 && key[0].isBlank() || key[1].isBlank()) {
+               if (key.length != 2 || key[0].isBlank() || key[1].isBlank()) {
                    throw  new IllegalArgumentException("Invalid string: " + s);
                }
                values.put(key[0], key[1]);
