@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
-import java.util.stream.Collectors;
 
 public class Config {
 
@@ -20,15 +19,13 @@ public class Config {
 
     public void load() throws IllegalArgumentException {
         try (BufferedReader in = new BufferedReader(new FileReader(this.path))) {
-           in.lines().filter(l -> l.length() > 0 && !l.contains("#") && l.contains("="))
+           in.lines().filter(l -> l.length() > 0 && !l.startsWith("#"))
                    .forEach(s -> {
                String[] key = s.split("=", 2);
-               if (key[0].isEmpty() || key[1].isEmpty()) {
+               if (key.length == 1 || key.length == 2 && key[0].isBlank() || key[1].isBlank()) {
                    throw  new IllegalArgumentException("Invalid string: " + s);
                }
-               if (!key[0].isEmpty()) {
-                   values.put(key[0], key[1]);
-               }
+               values.put(key[0], key[1]);
                    });
         } catch (IOException e) {
             e.printStackTrace();

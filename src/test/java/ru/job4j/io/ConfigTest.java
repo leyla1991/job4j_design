@@ -30,4 +30,19 @@ class ConfigTest {
         assertThat(config.value("number")).isEqualTo("79999=");
     }
 
+    @Test
+    void whenPairWithoutKey() {
+        String path = "./data/pair_without_key.properties";
+        Config config = new Config(path);
+        assertThatThrownBy((config::load))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void whenNoSign() {
+        String path = "./data/no_sign.properties";
+        Config config = new Config(path);
+        assertThatThrownBy(config::load)
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
