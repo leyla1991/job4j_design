@@ -18,8 +18,8 @@ class ConfigTest {
     void whenPairComment() {
         String path = "./data/pair_comment.properties";
         Config config = new Config(path);
-        config.load();
-        assertThat(config.value("password").isEmpty());
+        assertThatThrownBy(config::load)
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test

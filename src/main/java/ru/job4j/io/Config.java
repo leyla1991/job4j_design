@@ -20,8 +20,12 @@ public class Config {
 
     public void load() throws IllegalArgumentException {
         try (BufferedReader in = new BufferedReader(new FileReader(this.path))) {
-           in.lines().filter(l -> l.contains("=")).forEach(s -> {
+           in.lines().filter(l -> l.length() > 0 && !l.contains("#") && l.contains("="))
+                   .forEach(s -> {
                String[] key = s.split("=", 2);
+               if (key[0].isEmpty() || key[1].isEmpty()) {
+                   throw  new IllegalArgumentException("Invalid string: " + s);
+               }
                if (!key[0].isEmpty()) {
                    values.put(key[0], key[1]);
                }
