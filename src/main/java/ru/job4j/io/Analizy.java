@@ -1,21 +1,22 @@
 package ru.job4j.io;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class Analizy {
 
     public void unavailable(String source, String target) {
-        try (PrintWriter out = new PrintWriter(new FileOutputStream(target))) {
-            BufferedReader read = new BufferedReader(new FileReader(source));
-                boolean status = true;
+        try (PrintWriter out = new PrintWriter(new FileOutputStream(target));
+            BufferedReader read = new BufferedReader(new FileReader(source))) {
+            boolean status = true;
                 while (read.ready()) {
                     String line = read.readLine();
-                    if (status && line.contains("500") || status && line.contains("400")) {
+                    String[] l = line.split(" ");
+                    if (status && (l[0].startsWith("500") || l[0].startsWith("400"))) {
                         status = false;
-                        String[] l = line.split(" ");
                         out.print(l[1] + ";");
-                    } else if (!status && line.contains("200") || status && line.contains("300")) {
+                    }
+                    if (!status && (l[0].startsWith("200") || l[0].startsWith("300"))) {
                         status = true;
-                        String[] l = line.split(" ");
                         out.println(l[1] + System.lineSeparator());
                     }
                 }
