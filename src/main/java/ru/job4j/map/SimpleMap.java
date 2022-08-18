@@ -56,8 +56,8 @@ public class SimpleMap<K, V> implements Map<K, V> {
     @Override
     public V get(K key) {
        int index = (key == null) ? 0 : indexFor(hash(key.hashCode()));
-         if (table[index] != null && key == null
-         || table[index] != null && key.equals(table[index].key)) {
+         if (table[index] != null && (key == null
+         || key.equals(table[index].key))) {
              return table[index].value;
         }
         return null;
