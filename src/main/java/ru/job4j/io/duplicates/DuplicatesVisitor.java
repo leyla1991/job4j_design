@@ -1,6 +1,5 @@
 package ru.job4j.io.duplicates;
 
-import java.awt.*;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Path;
@@ -22,11 +21,8 @@ public class DuplicatesVisitor extends SimpleFileVisitor<Path> {
             dublicates.put(fileProperty, file);
         } else {
             lists.add(file);
-            for (Path p : lists) {
-                System.out.println(p.toAbsolutePath());
-            }
+            dublicatesPrint();
         }
-
         return FileVisitResult.CONTINUE;
     }
 
@@ -34,4 +30,9 @@ public class DuplicatesVisitor extends SimpleFileVisitor<Path> {
         return lists;
     }
 
+    public void dublicatesPrint() {
+        for (Path p : getLists()) {
+            System.out.println(p.toAbsolutePath());
+        }
+    }
 }
