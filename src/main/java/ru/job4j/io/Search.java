@@ -32,6 +32,9 @@ public class Search {
         if (!file.exists()) {
             throw new IllegalArgumentException(String.format("Not exists %s", file.getAbsoluteFile()));
         }
+        if (!file.isDirectory()) {
+            throw new IllegalArgumentException(String.format("Not directory %s", file.getAbsoluteFile()));
+        }
         if (!args[1].startsWith(".")) {
             throw new IllegalArgumentException("Root folder is null. Usage -java search.jar ROOT_FOLDER");
         }
