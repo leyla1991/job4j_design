@@ -38,34 +38,34 @@ class ArgsNameTest {
     void whenWrongSymbol() {
         assertThatThrownBy(() -> ArgsName.of(new String[] {"Xmx=512"}))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Not found -");
+                .hasMessage("Not found - Xmx=512");
     }
 
     @Test
     void whenDoesNotSymbol() {
         assertThatThrownBy(() -> ArgsName.of(new String[] {"-Xmx:512"}))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Not found =");
+                .hasMessage("Not found = -Xmx:512");
     }
 
     @Test
     void whenDoesNotKey() {
         assertThatThrownBy(() -> ArgsName.of(new String[] {"-=512"}))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Not found key");
+                .hasMessage("Not found key -=512");
     }
 
     @Test
     void  whenNotKeyAndValues() {
         assertThatThrownBy(() -> ArgsName.of(new String[] {"-="}))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Not found key");
+                .hasMessage("Not found key -=");
     }
 
     @Test
     void whenNotValue() {
         assertThatThrownBy(() -> ArgsName.of(new String[] {"-Xmx="}))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("Values not found");
+                .hasMessage("Values not found -Xmx=");
     }
 }

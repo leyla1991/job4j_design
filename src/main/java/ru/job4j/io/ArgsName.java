@@ -16,10 +16,6 @@ public class ArgsName {
     }
 
     private void parse(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Wrong values");
-        }
-
         for (String s : args) {
             validates(s);
             String[] kv = s.replaceFirst("-", "").split("=", 2);
@@ -31,6 +27,10 @@ public class ArgsName {
     }
 
     public static ArgsName of(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Wrong values");
+        }
+
         ArgsName names = new ArgsName();
         names.parse(args);
         return names;
@@ -38,17 +38,17 @@ public class ArgsName {
 
     public static void validates(String arg) {
         if (!arg.contains("=")) {
-            throw new IllegalArgumentException("Not found =");
+            throw new IllegalArgumentException("Not found = " + arg);
         }
         if (!arg.startsWith("-")) {
-            throw new IllegalArgumentException("Not found -");
+            throw new IllegalArgumentException("Not found - " + arg);
         }
         String[] a = arg.replaceFirst("-", "").split("=", 2);
         if (a[0].isEmpty()) {
-            throw new IllegalArgumentException("Not found key");
+            throw new IllegalArgumentException("Not found key " + arg);
         }
         if (a[1].isEmpty()) {
-            throw new IllegalArgumentException("Values not found");
+            throw new IllegalArgumentException("Values not found " + arg);
         }
     }
 
