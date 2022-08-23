@@ -16,8 +16,12 @@ public class ArgsName {
     }
 
     private void parse(String[] args) {
-        validates(args);
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Wrong values");
+        }
+
         for (String s : args) {
+            validates(s);
             String[] kv = s.replaceFirst("-", "").split("=", 2);
             if (kv.length == 2) {
                 values.put(kv[0], kv[1]);
@@ -32,21 +36,19 @@ public class ArgsName {
         return names;
     }
 
-    public static void validates(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Wrong values");
+    public static void validates(String arg) {
+        if (!arg.contains("=")) {
+            throw new IllegalArgumentException("Not found =");
         }
-        for (String arg : args) {
-             if (!arg.contains("=")) {
-                 throw new IllegalArgumentException("Not found =");
-             }
-             if (!arg.startsWith("-")) {
-                 throw new IllegalArgumentException("Not found -");
-             }
-             String[] a = arg.replaceFirst("-", "").split("=", 2);
-             if (a[0].isEmpty()) {
-                 throw new IllegalArgumentException("Not found key");
-             }
+        if (!arg.startsWith("-")) {
+            throw new IllegalArgumentException("Not found -");
+        }
+        String[] a = arg.replaceFirst("-", "").split("=", 2);
+        if (a[0].isEmpty()) {
+            throw new IllegalArgumentException("Not found key");
+        }
+        if (a[1].isEmpty()) {
+            throw new IllegalArgumentException("Values not found");
         }
     }
 
