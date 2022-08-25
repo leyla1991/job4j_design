@@ -30,11 +30,11 @@ public class Zip {
         if (!file.isDirectory()) {
             throw new IllegalArgumentException(String.format("Not directory %s", file.getAbsoluteFile()));
         }
-        if (name.get("o").startsWith(".")) {
-            throw new IllegalArgumentException("Wrong argument" + name.get("o"));
-        }
-        if (name.get("e").endsWith(".zip")) {
+        if (name.get("e").startsWith(".")) {
             throw new IllegalArgumentException("Wrong argument" + name.get("e"));
+        }
+        if (!name.get("o").endsWith(".zip")) {
+            throw new IllegalArgumentException("Wrong argument" + name.get("o"));
         }
     }
 
