@@ -30,7 +30,6 @@ public class ArgsName {
         if (args.length == 0) {
             throw new IllegalArgumentException("Wrong values");
         }
-
         ArgsName names = new ArgsName();
         names.parse(args);
         return names;
