@@ -2,6 +2,7 @@ package ru.job4j.io;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,10 +27,11 @@ public class ConsoleChat {
         String user = in.nextLine();
         int count = 0;
         List<String> log = new ArrayList<>();
+        List<String> answers = readPhrases();
         while (!OUT.equals(user)) {
-            if (count == 0) {
+            if (count == 0 && !STOP.equals(user)) {
                 log.add(user);
-                String answer = readPhrases().get(new Random().nextInt(readPhrases().size()));
+                String answer = answers.get(new Random().nextInt(answers.size()));
                 log.add(answer);
                 System.out.println(answer);
                 user = in.nextLine();
@@ -43,7 +45,7 @@ public class ConsoleChat {
             if (CONTINUE.equals(user) && count == 1) {
                 count = 0;
                 log.add(user);
-                String answer = readPhrases().get(new Random().nextInt(readPhrases().size()));
+                String answer = answers.get(new Random().nextInt(answers.size()));
                 log.add(answer);
                 System.out.println(answer);
                 user = in.nextLine();
