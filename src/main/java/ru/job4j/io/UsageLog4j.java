@@ -16,8 +16,9 @@ public class UsageLog4j {
         byte footSize = 42;
         long days = 12045;
         char firstLetter = 'P';
-        LOG.debug("User info name: {}, age: {}, weight: {}, height: {}, footSize: {}, sport: {}, days: {}, firstLetter: {}",
-                name, age, weight, height, footSize, sport, days, firstLetter);
+        short size = 46;
+        LOG.debug("User info name: {}, age: {}, weight: {}, height: {}, footSize: {}, sport: {}, days: {}, firstLetter: {}, size: {}",
+                name, age, weight, height, footSize, sport, days, firstLetter, size);
     }
 }
 
