@@ -1,0 +1,1 @@
+2022-08-29 22:31:15,156 DEBUG ru.job4j.io.UsageLog4j:main:20 - User info name: Petr Arsentev, age: 33, weight: 72.0, height: 182.3, footSize: 42, sport: true, days: 12045, firstLetter: P, size: 46
