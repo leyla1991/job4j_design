@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cat sex="true" age="2" talk="Мяу">
+        <nameCat name="Cassiopeia"/>
+        <colors>
+                <color>Black</color>
+                <color>White</color>
+                <color>Pigment</color>
+        </colors>
+</cat>
