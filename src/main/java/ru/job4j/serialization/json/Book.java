@@ -4,11 +4,31 @@ import java.util.Arrays;
 
 public class Book {
 
-    private final boolean bye;
-    private final  String name;
-    private final int page;
-    private final String[] style;
-    private final Author author;
+    private boolean bye;
+    private  String name;
+    private int page;
+    private String[] style;
+    private Author author;
+
+    public boolean isBye() {
+        return bye;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public String[] getStyle() {
+        return style;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
 
     public Book(boolean bye, String name, int page, String[] style, Author author) {
         this.bye = bye;
@@ -17,6 +37,8 @@ public class Book {
         this.style = style;
         this.author = author;
     }
+
+
 
     @Override
     public String toString() {
