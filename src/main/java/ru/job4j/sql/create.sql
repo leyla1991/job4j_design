@@ -14,20 +14,22 @@ create table stateItem(
 	name varchar(255)
 );
 
+create table users(
+	id serial primary key,
+	name varchar(255),
+	roles_id int references roles(id)
+);
+
 create table item(
 	id serial primary key,
 	number int,
 	name varchar(255),
 	category_id int references category(id),
-	stateItem_id int references stateItem(id)
+	stateItem_id int references stateItem(id),
+	users_id int references users(id)
 );
 
-create table users(
-	id serial primary key,
-	name varchar(255),
-	roles_id int references roles(id),
-	item_id int references item(id)
-);
+
 
 
 create table rules(

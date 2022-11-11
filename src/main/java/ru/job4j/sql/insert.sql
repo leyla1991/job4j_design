@@ -9,15 +9,15 @@ insert into category(number, name) values (3, 'third');
 insert into stateItem(name) values ('close');
 insert into stateItem(name) values ('open');
 
-insert into item(number, name, category_id, stateItem_id) values ((1), 'find Man', 1, 2);
-insert into item(number, name, category_id, stateItem_id) values ((1), 'find Women', 2, 1);
-insert into item(number, name, category_id, stateItem_id) values ((1), 'find Women', 3, 2);
+insert into users(name, roles_id) values ('Ivan', 1);
+insert into users(name, roles_id) values ('Anna', 2);
+insert into users(name, roles_id) values ('Luiza', 2);
+insert into users(name, roles_id) values ('Anton', 1);
+insert into users(name, roles_id) values ('Anastasia', 2);
 
-insert into users(name, roles_id, item_id) values ('Ivan', 1, 1);
-insert into users(name, roles_id, item_id) values ('Anna', 2, 3);
-insert into users(name, roles_id, item_id) values ('Luiza', 2, 2);
-insert into users(name, roles_id, item_id) values ('Anton', 1, 1);
-insert into users(name, roles_id, item_id) values ('Anastasia', 2, 2);
+insert into item(number, name, category_id, stateItem_id, users_id) values ((1), 'find Man', 1, 2, 1);
+insert into item(number, name, category_id, stateItem_id, users_id) values ((1), 'find Women', 2, 1, 2);
+insert into item(number, name, category_id, stateItem_id, users_id) values ((1), 'find Women', 3, 2, 2);
 
 insert into rules(name) values ('лунный свет');
 insert into rules(name) values ('Romeo!');
