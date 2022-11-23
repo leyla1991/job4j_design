@@ -1,14 +1,13 @@
+create table author(
+	id serial primary key,
+	name varchar(255)
+);
+
 create table book(
 	id serial primary key,
 	name varchar(255),
-	page int
+	page int,
 	author_id int references author(id)
-);
-
-create table author(
-	id serial primary key,
-	name varchar(255),
-
 );
 
 insert into book(name, page, author_id) values ('Маленький принц', 255, 1);
@@ -31,4 +30,4 @@ select a.name as Фамилия, b.name as Название, b.page as Стра�
 from author as a join book as b on b.author_id = a.id;
 
 select a.name as "Фамилия автора", b.name  Название, b.page Страницы
-from author a join book b on a.author_id = a.id;
+from author a join book b on b.author_id = a.id;
