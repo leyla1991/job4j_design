@@ -10,13 +10,12 @@ WHERE name LIKE ('%мороженое') OR name LIKE('Мороженое%');
 
 SELECT name
 FROM product
-WHERE expired_date <= '2022-12-04';
+WHERE expired_date <= current_date;
 
 SELECT name, MAX(price) AS max_price
 FROM product
-GROUP BY name
-ORDER BY 2 DESC
-LIMIT 1;
+GROUP BY name, price
+HAVING price = MAX(price);
 
 SELECT type.name, COUNT(product.name) AS Количество
 FROM
