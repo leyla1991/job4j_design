@@ -12,10 +12,9 @@ SELECT name
 FROM product
 WHERE expired_date <= current_date;
 
-SELECT name, MAX(price) AS max_price
-FROM product
-GROUP BY name, price
-HAVING price = MAX(price);
+SELECT * FROM product
+WHERE price = (SELECT max(price)
+                FROM product);
 
 SELECT type.name, COUNT(product.name) AS Количество
 FROM
