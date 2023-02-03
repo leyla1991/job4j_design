@@ -6,15 +6,19 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class ConnectionDemo {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Class.forName("org.postgresql.Driver");
-        Config config = new Config("C:\\projects\\job4j_design\\src\\main\\resources\\app.properties");
+        Config config = new Config(Objects.requireNonNull(ConnectionDemo.class.getClassLoader().getResource("app.properties")).getPath());
         config.load();
-        try (Connection connection = DriverManager.getConnection(config.value("url"),
-                config.value("login"), config.value("password"))) {
+        Class.forName(config.value("driver"));
+        String url = config.value("url");
+        String username = config.value("login");
+        String pass = config.value("password");
+        try (Connection connection = DriverManager.getConnection(url,
+                username, pass)) {
             DatabaseMetaData metaData = connection.getMetaData();
             System.out.println(metaData.getUserName());
             System.out.println(metaData.getURL());
