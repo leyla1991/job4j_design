@@ -84,9 +84,9 @@ public class TableEditor implements AutoCloseable {
                 System.out.println(tableEditor.getTableSheme("Book"));
                 tableEditor.addColumn("Book", "author", "text");
                 System.out.println(tableEditor.getTableSheme("Book"));
-                tableEditor.dropColumn("Book", "author");
-                System.out.println(tableEditor.getTableSheme("Book"));
                 tableEditor.renameColumnName("Book", "author", "RENAME");
+                System.out.println(tableEditor.getTableSheme("Book"));
+                tableEditor.dropColumn("Book", "author");
                 System.out.println(tableEditor.getTableSheme("Book"));
                 tableEditor.dropTable("Book");
             }
