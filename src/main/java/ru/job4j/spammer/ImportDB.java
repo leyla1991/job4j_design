@@ -20,10 +20,13 @@ public class ImportDB {
     public List<User> load() throws IOException {
         List<User> users = new ArrayList<>();
         try (BufferedReader rd = new BufferedReader(new FileReader(dump))) {
-           rd.lines()
-                   .map(s -> s.split(";", 2))
-                   .forEach(map -> users.add(new User(map[0], map[1])));
-
+           rd.lines().forEach(s -> {
+               String[] lines = s.split(";");
+               if (lines.length < 2 || lines[0].isBlank() && lines[1].isBlank()) {
+                   throw new IllegalArgumentException("Неверный формат строки");
+               }
+               users.add(new User(lines[0], lines[1]));
+           });
         }
         return users;
     }
