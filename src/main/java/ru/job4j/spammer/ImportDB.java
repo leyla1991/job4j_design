@@ -22,7 +22,7 @@ public class ImportDB {
         try (BufferedReader rd = new BufferedReader(new FileReader(dump))) {
            rd.lines().forEach(s -> {
                String[] lines = s.split(";");
-               if (lines.length < 2 || lines[0].isBlank() && lines[1].isBlank()) {
+               if (lines.length < 2 || lines[0].isBlank() || lines[1].isBlank()) {
                    throw new IllegalArgumentException("Неверный формат строки");
                }
                users.add(new User(lines[0], lines[1]));
