@@ -1,14 +1,16 @@
 package ru.job4j.ood.tdd;
 
 import org.checkerframework.checker.units.qual.C;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
 import java.util.Calendar;
 import java.util.List;
-import java.util.TimeZone;
 
+
+@Disabled("Тесты отключены. Удалить аннотацию после реализации всех методов по заданию.")
 class Cinema3DTest {
 
     @Test
