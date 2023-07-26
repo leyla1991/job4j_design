@@ -14,7 +14,7 @@ public class MaxMin {
         return sorter(value, (o1, o2) -> comparator.compare(o1, o2) <= 0);
     }
 
-    public <T> T sorter(List<T> value, BiPredicate<T, T> predicate) {
+    private  <T> T sorter(List<T> value, BiPredicate<T, T> predicate) {
         T rsl;
         if (!value.isEmpty()) {
             rsl = value.get(0);
