@@ -8,10 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 class GenerateTest {
-    private Library library = new Library();
+
     @Disabled("Тесты отключены. Удалить аннотацию после реализации всех методов по заданию.")
     @Test
     public void whenProduceDone() {
+        Library library = new Library();
         String text = "I am a ${name}, Who are ${subject}?";
         Map<String, String> map = new HashMap<>();
         map.put("Name", "Power");
@@ -21,6 +22,7 @@ class GenerateTest {
 
     @Test
     public void whenKeyNull() {
+        Library library = new Library();
         String text = " ";
         Map<String, String> map = new HashMap<>();
         map.put("Name",
@@ -31,6 +33,7 @@ class GenerateTest {
 
     @Test
     public void whenKeyExcess() {
+        Library library = new Library();
         String text = " ";
         Map<String, String> map = new HashMap<>();
         map.put("Dmitriy", "Garris");
