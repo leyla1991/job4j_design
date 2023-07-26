@@ -1,15 +1,15 @@
 package ru.job4j.template;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 import java.util.HashMap;
 import java.util.Map;
 
+@Disabled("Тесты отключены. Удалить аннотацию после реализации всех методов по заданию.")
 class GenerateTest {
 
-    @Disabled("Тесты отключены. Удалить аннотацию после реализации всех методов по заданию.")
+
     @Test
     public void whenProduceDone() {
         Library library = new Library();
@@ -41,6 +41,5 @@ class GenerateTest {
         map.put("Bond", "James");
         assertThatThrownBy(() -> library.produce(text, map))
                 .isInstanceOf(IllegalArgumentException.class);
-
     }
 }
