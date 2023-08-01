@@ -2,11 +2,11 @@ package ru.job4j.ood.srp;
 
 import java.util.List;
 
-public interface Spell<T> {
+public interface Spell {
 
-    List<T> spells(int size);
+    List<String> spells(int size);
 
-    void readSpell(List<T> spells);
+    String  generateSpell();
 
-    void castSpell(List<T> spells, int numButton);
+    void castSpell(List<String> spells, int numButton);
 }
