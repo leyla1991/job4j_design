@@ -20,7 +20,7 @@ class ReportHRTest {
         memStore.add(worker1);
         memStore.add(worker2);
         memStore.add(worker3);
-        ReportHR report = new ReportHR(memStore, new DescComparator());
+        Report report = new ReportHR(memStore, new DescComparator());
         StringBuilder expected = new StringBuilder()
                 .append("Name; Salary;")
                 .append(System.lineSeparator())

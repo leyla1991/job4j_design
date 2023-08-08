@@ -20,7 +20,7 @@ class ReportCSVTest {
         Calendar now = Calendar.getInstance();
         Employee worker = new Employee("Ivan", now, now, 123);
         store.add(worker);
-        ReportCSV report = new ReportCSV(store, date);
+        Report report = new ReportCSV(store, date);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Salary")
                 .append(System.lineSeparator())

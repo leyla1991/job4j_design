@@ -22,7 +22,7 @@ class ReportBuhTest {
         Employee worker = new Employee("Ivan", now, now, 100);
         memStore.add(worker);
         DateTimeParser<Calendar> date = new ReportDateTimeParser();
-        ReportBuh report = new ReportBuh(memStore, date, converter, Currency.EUR, Currency.RUB);
+        Report report = new ReportBuh(memStore, date, converter, Currency.EUR, Currency.RUB);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Converter;")
                 .append(System.lineSeparator())
