@@ -34,6 +34,5 @@ class ReportHRTest {
                 .append(worker1.getSalary())
                 .append(System.lineSeparator());
         assertThat(report.generate(em -> true)).isEqualTo(expected.toString());
-
     }
 }
