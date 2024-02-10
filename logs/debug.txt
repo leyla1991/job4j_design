@@ -1,1 +1,33 @@
 2022-08-29 22:31:15,156 DEBUG ru.job4j.io.UsageLog4j:main:20 - User info name: Petr Arsentev, age: 33, weight: 72.0, height: 182.3, footSize: 42, sport: true, days: 12045, firstLetter: P, size: 46
+2024-01-16 21:26:38,608 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:26:38,833  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+2024-01-16 21:26:52,060 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:26:52,273  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+2024-01-16 21:26:57,758 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:26:57,985  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+2024-01-16 21:27:10,051 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:27:10,385  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+2024-01-16 21:29:02,606 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:29:02,775  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+2024-01-16 21:30:16,497 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:30:16,678  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+2024-01-16 21:31:13,026 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:31:13,328  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+
+2024-01-16 21:32:23,959 DEBUG org.testng.TestNG:debug:82 - suiteXmlPath: "C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml"
+2024-01-16 21:32:24,146  INFO org.testng.internal.Utils:info:112 - [TestNG] Running:
+  C:\Users\atagl\AppData\Local\JetBrains\IdeaIC2023.2\temp-testng-customsuite.xml
+

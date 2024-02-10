@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Store {
 
-    void add(Food food, double validate);
+    void add(List<Food> foodList);
 
     int minDate();
 

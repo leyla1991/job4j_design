@@ -7,8 +7,7 @@ import java.util.List;
 public abstract class AbstractStore implements Store {
 
     protected List<Food> foodList = new ArrayList<>();
-
-
+    public static final int LAST_DATE = 75;
     @Override
     public abstract int minDate();
 
@@ -17,12 +16,10 @@ public abstract class AbstractStore implements Store {
 
 
     @Override
-    public abstract void add(Food food, double validate);
+    public abstract void add(List<Food> foodList);
 
     public List<Food> getFoodList() {
         return foodList;
     }
-
-
 
 }
