@@ -1,5 +1,19 @@
 package ru.job4j.ood.lsp.parking;
 
-public class ControlParking {
+import java.util.List;
+
+public class ControlParking extends AbstractParking {
+    @Override
+    public void addCar(List<Cars> cars) {
+        for (Cars car : cars) {
+            if (freeCount() >= car.getSize()) {
+                super.getCars().add(car);
+                COUNT_OCCUPIED += car.getSize();
+            } else {
+                System.out.println("Мест нет, ищите другую парковку");
+            }
+        }
+    }
+
 
 }
