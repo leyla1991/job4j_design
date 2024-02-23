@@ -8,7 +8,7 @@ public class ControlParking extends AbstractParking {
         for (Cars car : cars) {
             if (freeCount() >= car.getSize()) {
                 super.getCars().add(car);
-                COUNT_OCCUPIED += car.getSize();
+                getCounting += car.getSize();
             } else {
                 System.out.println("Мест нет, ищите другую парковку");
             }

@@ -2,7 +2,6 @@ package ru.job4j.ood.lsp.parking;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public abstract class AbstractParking implements Parking {
 
@@ -10,13 +9,13 @@ public abstract class AbstractParking implements Parking {
         return cars;
     }
 
-    public int COUNT = 50;
-    public int COUNT_OCCUPIED;
+    public static final int COUNTING = 50;
+    public int getCounting;
     protected List<Cars> cars = new ArrayList<>();
 
     @Override
     public int freeCount() {
-        return COUNT - COUNT_OCCUPIED;
+        return COUNTING - getCounting;
     }
 
     @Override
