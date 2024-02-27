@@ -12,7 +12,7 @@ public class WareHouseTest {
     void whenAdd() {
         Food food = new Food("Milk",
                 LocalDateTime.of(2024, 3, 30, 1, 12),
-                LocalDateTime.of(2024, 2, 9, 1, 12),
+                LocalDateTime.of(2024, 2, 25, 1, 12),
                 130.3D, 0.25D);
         List<Food> foodList = List.of(food);
         AbstractStore wareHouse = new Warehouse();

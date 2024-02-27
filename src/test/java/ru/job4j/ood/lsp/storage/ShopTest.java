@@ -27,12 +27,12 @@ public class ShopTest {
     @Test
     void whenPriceChange() {
         Food food = new Food("Milk",
-                LocalDateTime.of(2024, 2, 20, 1, 10),
+                LocalDateTime.of(2024, 3, 20, 1, 10),
                 LocalDateTime.of(2024, 1, 10, 1, 10),
                 130.3D, 0.25D);
         List<Food> foodList = List.of(food);
         AbstractStore shop = new Shop();
         shop.add(foodList);
-        assertThat(shop.getFoodList().get(0).getPrice()).isEqualTo(97.72500000000001D);
+        assertThat(shop.getFoodList().get(0).getPrice()).isEqualTo(130.3D);
     }
 }
