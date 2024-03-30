@@ -87,26 +87,14 @@ public class RandomADM {
         }};
 
 
-        List<String> strings = List.of("@lub_oww",
-        "@Katenashn",
-        "@elekane",
-        "@Erestnica",
-        "@magfafnir",
-        "@anfisashabat",
-        "@NataliD1311",
-        "@dzira92",
-        "8911 003 2047",
-        "@Lamia_Ghost",
-        "@Vasilisk_in",
-        "@Sizalina",
-        "@Jester_ios",
-        "@Kseniya_SUNdueva",
-        "@jazazar",
-        "@le_raduga",
-        "Anastasia K",
-        "@faithcontrol",
-        "мой айди",
-                "anni");
+        List<String> strings = List.of("Диана по кз да",
+"Борис",
+        "Анфиса Шабат готова на кз",
+        "Елена",
+"Екатерина",
+"Джерри",
+"Кирилл Г",
+"Юля");
 
         List<String> string = randomADM.randoms1(strings);
         List<String> stringList = randomADM.randoms1(randomADM.stringList());

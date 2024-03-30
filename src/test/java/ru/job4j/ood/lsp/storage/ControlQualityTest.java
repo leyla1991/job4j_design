@@ -15,16 +15,16 @@ class ControlQualityTest {
     void whenAddFoodAll() {
         List<Food> foods = new ArrayList<>();
         Food food = new Food("Milk",
-                LocalDateTime.of(2024, 1, 13, 1, 12),
-                LocalDateTime.of(2024, 1, 10, 1, 12),
+                LocalDateTime.of(2024, 3, 13, 1, 12),
+                LocalDateTime.of(2024, 3, 10, 1, 12),
                 130.3D, 0.25D);
         Food food1 = new Food("Brad",
+                LocalDateTime.of(2024, 4, 10, 1, 12),
                 LocalDateTime.of(2024, 3, 10, 1, 12),
-                LocalDateTime.of(2024, 2, 10, 1, 12),
                 154.3D, 0.25D);
         Food food2 = new Food("Honey",
-                LocalDateTime.of(2024, 4, 1, 1, 12),
-                LocalDateTime.of(2024, 2, 26, 1, 12),
+                LocalDateTime.of(2024, 5, 1, 1, 12),
+                LocalDateTime.of(2024, 3, 26, 1, 12),
                 144D, 0.23D);
         foods.add(food);
         foods.add(food1);

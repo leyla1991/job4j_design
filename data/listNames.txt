@@ -1,16 +1,13 @@
-@aravinat
-@elekane
-@astrodust05
-@Ms_Red_Fox
-@EvgenyKondrashkin
-@Plus_Julia
-@Erzullie
-@Nastenysh159
-7 926 711 3762
-@anfisashabat
-@Irina_feya
-@Katenashn
-@Lamia_Ghost
-@Vasilisk_in
-@Kseniya_SUNdueva
-@le_raduga
+"""Диана по кз да"","
+"""Борис"","
+"""Анфиса Шабат готова на кз"","
+"""Елена из кз"""
+"""Екатерина"""
+"""Джерри"""
+"""Кирилл Г. готов на кз"""
+"""Юля"""
+Анна Горбунова
+Анна А.
+Ксения
+Мария
+я
