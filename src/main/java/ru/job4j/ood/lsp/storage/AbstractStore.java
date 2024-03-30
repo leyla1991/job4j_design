@@ -13,6 +13,10 @@ public abstract class AbstractStore implements Store {
     @Override
     public abstract int maxDate();
 
+    @Override
+    public List<Food> getFood() {
+        return foodList;
+    }
 
     @Override
     public abstract void add(List<Food> foodList);

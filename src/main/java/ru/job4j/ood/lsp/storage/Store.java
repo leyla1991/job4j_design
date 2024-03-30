@@ -10,4 +10,6 @@ public interface Store {
 
     int maxDate();
 
+    List<Food> getFood();
+
 }
